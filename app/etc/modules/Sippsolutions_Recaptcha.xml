@@ -21,11 +21,11 @@
  */
  -->
 <config>
-	<modules>
-		<Sippsolutions_Recaptcha>
-			<active>true</active>
-			<codePool>community</codePool>
-			<depends/>
-		</Sippsolutions_Recaptcha>
-	</modules>
+    <modules>
+        <Sippsolutions_Recaptcha>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends/>
+        </Sippsolutions_Recaptcha>
+    </modules>
 </config>

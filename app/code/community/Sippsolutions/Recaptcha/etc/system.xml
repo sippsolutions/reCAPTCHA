@@ -21,165 +21,165 @@
  */
  -->
 <config>
-	<tabs>
-		<sippsolutions>
-			<label>sippsolutions</label>
-			<sort_order>140</sort_order>
-		</sippsolutions>
-	</tabs>
-	<sections>
-		<sippsolutions_recaptcha translate="label" module="sippsolutions_recaptcha">
-			<label>reCAPTCHA</label>
-			<tab>sippsolutions</tab>
-			<sort_order>100</sort_order>
-			<show_in_default>1</show_in_default>
-			<show_in_website>1</show_in_website>
-			<show_in_store>1</show_in_store>
-			<groups>
-				<!-- general -->
-				<general translate="label">
-					<label>General</label>
-					<frontend_type>text</frontend_type>
-					<sort_order>10</sort_order>
-					<show_in_default>1</show_in_default>
-					<show_in_website>1</show_in_website>
-					<show_in_store>1</show_in_store>
-					<fields>
-						<enable translate="label,comment">
-							<label>Enable</label>
-							<frontend_type>select</frontend_type>
-							<source_model>adminhtml/system_config_source_yesno</source_model>
-							<sort_order>10</sort_order>
-							<show_in_default>1</show_in_default>
-							<show_in_website>1</show_in_website>
-							<show_in_store>1</show_in_store>
-						</enable>
-						<only_guests translate="label,comment">
-							<label>Show captcha only for guests</label>
-							<frontend_type>select</frontend_type>
-							<source_model>adminhtml/system_config_source_yesno</source_model>
-							<sort_order>20</sort_order>
-							<show_in_default>1</show_in_default>
-							<show_in_website>1</show_in_website>
-							<show_in_store>1</show_in_store>
-							<depends>
-								<enable>1</enable>
-							</depends>
-						</only_guests>
-						<theme translate="label,comment">
-							<label>Theme</label>
-							<frontend_type>select</frontend_type>
-							<source_model>sippsolutions_recaptcha/source_theme</source_model>
-							<sort_order>30</sort_order>
-							<show_in_default>1</show_in_default>
-							<show_in_website>1</show_in_website>
-							<show_in_store>1</show_in_store>
-							<depends>
-								<enable>1</enable>
-							</depends>
-						</theme>
-						<size translate="label,comment">
-							<label>Size</label>
-							<frontend_type>select</frontend_type>
-							<source_model>sippsolutions_recaptcha/source_size</source_model>
-							<sort_order>40</sort_order>
-							<show_in_default>1</show_in_default>
-							<show_in_website>1</show_in_website>
-							<show_in_store>1</show_in_store>
-							<depends>
-								<enable>1</enable>
-							</depends>
-						</size>
-					</fields>
-				</general>
+    <tabs>
+        <sippsolutions>
+            <label>sippsolutions</label>
+            <sort_order>140</sort_order>
+        </sippsolutions>
+    </tabs>
+    <sections>
+        <sippsolutions_recaptcha translate="label" module="sippsolutions_recaptcha">
+            <label>reCAPTCHA</label>
+            <tab>sippsolutions</tab>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <!-- general -->
+                <general translate="label">
+                    <label>General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable translate="label,comment">
+                            <label>Enable</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable>
+                        <only_guests translate="label,comment">
+                            <label>Show captcha only for guests</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enable>1</enable>
+                            </depends>
+                        </only_guests>
+                        <theme translate="label,comment">
+                            <label>Theme</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>sippsolutions_recaptcha/source_theme</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enable>1</enable>
+                            </depends>
+                        </theme>
+                        <size translate="label,comment">
+                            <label>Size</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>sippsolutions_recaptcha/source_size</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enable>1</enable>
+                            </depends>
+                        </size>
+                    </fields>
+                </general>
 
-				<!-- keys -->
-				<key translate="label">
-					<label>Keys</label>
-					<frontend_type>text</frontend_type>
-					<sort_order>20</sort_order>
-					<show_in_default>1</show_in_default>
-					<show_in_website>1</show_in_website>
-					<show_in_store>1</show_in_store>
-					<fields>
-						<public translate="label,comment">
-							<label>Website key</label>
-							<frontend_type>text</frontend_type>
-							<sort_order>10</sort_order>
-							<show_in_default>1</show_in_default>
-							<show_in_website>1</show_in_website>
-							<show_in_store>1</show_in_store>
-						</public>
-						<private translate="label,comment">
-							<label>Private key</label>
-							<frontend_type>text</frontend_type>
-							<sort_order>20</sort_order>
-							<show_in_default>1</show_in_default>
-							<show_in_website>1</show_in_website>
-							<show_in_store>1</show_in_store>
-						</private>
-					</fields>
-				</key>
+                <!-- keys -->
+                <key translate="label">
+                    <label>Keys</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <public translate="label,comment">
+                            <label>Website key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </public>
+                        <private translate="label,comment">
+                            <label>Private key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </private>
+                    </fields>
+                </key>
 
-				<!-- locations -->
-				<location translate="label">
-					<label>Locations</label>
-					<frontend_type>text</frontend_type>
-					<sort_order>30</sort_order>
-					<show_in_default>1</show_in_default>
-					<show_in_website>1</show_in_website>
-					<show_in_store>1</show_in_store>
-					<fields>
-						<login translate="label,comment">
-							<label>Login</label>
-							<frontend_type>select</frontend_type>
-							<source_model>adminhtml/system_config_source_yesno</source_model>
-							<sort_order>10</sort_order>
-							<show_in_default>1</show_in_default>
-							<show_in_website>1</show_in_website>
-							<show_in_store>1</show_in_store>
-						</login>
-						<review translate="label,comment">
-							<label>Product reviews</label>
-							<frontend_type>select</frontend_type>
-							<source_model>adminhtml/system_config_source_yesno</source_model>
-							<sort_order>20</sort_order>
-							<show_in_default>1</show_in_default>
-							<show_in_website>1</show_in_website>
-							<show_in_store>1</show_in_store>
-						</review>
-						<contact translate="label,comment">
-							<label>Contact form</label>
-							<frontend_type>select</frontend_type>
-							<source_model>adminhtml/system_config_source_yesno</source_model>
-							<sort_order>30</sort_order>
-							<show_in_default>1</show_in_default>
-							<show_in_website>1</show_in_website>
-							<show_in_store>1</show_in_store>
-						</contact>
-						<register translate="label,comment">
-							<label>Account registration</label>
-							<frontend_type>select</frontend_type>
-							<source_model>adminhtml/system_config_source_yesno</source_model>
-							<sort_order>40</sort_order>
-							<show_in_default>1</show_in_default>
-							<show_in_website>1</show_in_website>
-							<show_in_store>1</show_in_store>
-						</register>
-						<custom translate="label,comment">
-							<label>Custom routes</label>
-							<frontend_type>textarea</frontend_type>
-							<comment>Routes in format 'module/controller/action'. One per line. Example:
-								'contacts/index/post'
-							</comment>
-							<sort_order>99</sort_order>
-							<show_in_default>1</show_in_default>
-							<show_in_website>1</show_in_website>
-							<show_in_store>1</show_in_store>
-						</custom>
-					</fields>
-				</location>
-			</groups>
-		</sippsolutions_recaptcha>
-	</sections>
+                <!-- locations -->
+                <location translate="label">
+                    <label>Locations</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>30</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <login translate="label,comment">
+                            <label>Login</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </login>
+                        <review translate="label,comment">
+                            <label>Product reviews</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </review>
+                        <contact translate="label,comment">
+                            <label>Contact form</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </contact>
+                        <register translate="label,comment">
+                            <label>Account registration</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </register>
+                        <custom translate="label,comment">
+                            <label>Custom routes</label>
+                            <frontend_type>textarea</frontend_type>
+                            <comment>Routes in format 'module/controller/action'. One per line. Example:
+                                'contacts/index/post'
+                            </comment>
+                            <sort_order>99</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </custom>
+                    </fields>
+                </location>
+            </groups>
+        </sippsolutions_recaptcha>
+    </sections>
 </config>

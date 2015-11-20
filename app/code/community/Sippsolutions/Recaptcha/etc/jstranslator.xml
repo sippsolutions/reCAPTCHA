@@ -21,7 +21,7 @@
  */
  -->
 <jstranslator>
-	<recaptcha-solve translate="message" module="widget">
-		<message>Please solve the captcha.</message>
-	</recaptcha-solve>
+    <recaptcha-solve translate="message" module="widget">
+        <message>Please solve the captcha.</message>
+    </recaptcha-solve>
 </jstranslator>

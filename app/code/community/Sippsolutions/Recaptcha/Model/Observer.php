@@ -54,6 +54,12 @@ class Sippsolutions_Recaptcha_Model_Observer
         // get client response
         $response = $request->getParam('g-recaptcha-response');
 
+        // define params object for event
+        $params = (object)array(
+            'route' => $route,
+            'response' => $response,
+        );
+
         // check client response
         if ($response) {
             // create stream context
@@ -73,8 +79,11 @@ class Sippsolutions_Recaptcha_Model_Observer
 
             // check response
             if ($response && ($response = json_decode($response)) && $response->success) {
+                // set response
+                $params->response = $response;
+
                 // throw event
-                Mage::dispatchEvent('sippsolutions_recaptcha_solved');
+                Mage::dispatchEvent('sippsolutions_recaptcha_solved', array('config' => $params));
 
                 // proceed
                 return $this;
@@ -93,27 +102,23 @@ class Sippsolutions_Recaptcha_Model_Observer
             $redirect = Mage::getUrl();
         }
 
-        // define config object for event
-        $config = (object)array(
-            'route' => $route,
-            'response' => $response,
-            'should_redirect' => true,
-            'direct_to' => $redirect,
-            'message' => $helper->__('Please solve the captcha.'),
-        );
+        // set redirect
+        $params->should_redirect = true;
+        $params->redirect_to = $redirect;
+        $params->message = $helper->__('Please solve the captcha.');
 
         // throw event
-        Mage::dispatchEvent('sippsolutions_recaptcha_redirect_before', array('config' => $config));
+        Mage::dispatchEvent('sippsolutions_recaptcha_redirect_before', array('config' => $params));
 
         /** @var $session Mage_Core_Model_Session */
         $session = Mage::getSingleton('core/session');
 
         // add error message
-        $session->addError($config->message);
+        $session->addError($params->message);
 
         // redirect to page
-        if ($config->should_redirect) {
-            header('Location: ' . $config->direct_to);
+        if ($params->should_redirect) {
+            header('Location: ' . $params->redirect_to);
             die();
         }
 

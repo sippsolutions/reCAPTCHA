@@ -21,18 +21,18 @@
  */
  -->
 <layout version="0.1.0">
-	<default>
-		<!-- add js file -->
-		<reference name="head">
-			<action method="addItem" ifconfig="sippsolutions_recaptcha/general/enable">
-				<type>skin_js</type>
-				<name>js/sippsolutions/recaptcha.js</name>
-			</action>
-		</reference>
+    <default>
+        <!-- add js file -->
+        <reference name="head">
+            <action method="addItem" ifconfig="sippsolutions_recaptcha/general/enable">
+                <type>skin_js</type>
+                <name>js/sippsolutions/recaptcha.js</name>
+            </action>
+        </reference>
 
-		<!-- add configuration -->
-		<reference name="before_body_end">
-			<block type="core/template" template="sippsolutions/recaptcha/init.phtml"/>
-		</reference>
-	</default>
+        <!-- add configuration -->
+        <reference name="before_body_end">
+            <block type="core/template" template="sippsolutions/recaptcha/init.phtml"/>
+        </reference>
+    </default>
 </layout>

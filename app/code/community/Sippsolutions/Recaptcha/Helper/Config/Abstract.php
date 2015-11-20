@@ -14,8 +14,7 @@
  * @category   Sippsolutions
  * @package    Sippsolutions_Recaptcha
  * @subpackage Helper
- * @author     Simon Sippert
- * <s.sippert@sippsolutions.de>
+ * @author     Simon Sippert <s.sippert@sippsolutions.de>
  * @copyright  Copyright (c) 2015 sippsolutions (http://www.sippsolutions.de)
  * @version    1.0.0
  * @link       http://www.sippsolutions.de/
