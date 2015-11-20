@@ -29,8 +29,14 @@ class Sippsolutions_Recaptcha_Model_Observer
      */
     public function checkCaptcha(Varien_Event_Observer $observer)
     {
+        // get event
+        $event = $observer->getEvent();
+
+        /** @var $controller Mage_Core_Controller_Front_Action */
+        $controller = $event->getControllerAction();
+
         // get request
-        $request = Mage::app()->getRequest();
+        $request = $controller->getRequest();
 
         /** @var $helper Sippsolutions_Recaptcha_Helper_Data */
         $helper = Mage::helper('sippsolutions_recaptcha');
@@ -83,7 +89,7 @@ class Sippsolutions_Recaptcha_Model_Observer
                 $params->response = $response;
 
                 // throw event
-                Mage::dispatchEvent('sippsolutions_recaptcha_solved', array('config' => $params));
+                Mage::dispatchEvent('sippsolutions_recaptcha_solved', array('config' => $params, 'controller' => $controller));
 
                 // proceed
                 return $this;
@@ -103,12 +109,12 @@ class Sippsolutions_Recaptcha_Model_Observer
         }
 
         // set redirect
-        $params->should_redirect = true;
-        $params->redirect_to = $redirect;
+        $params->shouldRedirect = true;
+        $params->redirectTo = $redirect;
         $params->message = $helper->__('Please solve the captcha.');
 
         // throw event
-        Mage::dispatchEvent('sippsolutions_recaptcha_redirect_before', array('config' => $params));
+        Mage::dispatchEvent('sippsolutions_recaptcha_redirect_before', array('config' => $params, 'controller' => $controller));
 
         /** @var $session Mage_Core_Model_Session */
         $session = Mage::getSingleton('core/session');
@@ -116,10 +122,13 @@ class Sippsolutions_Recaptcha_Model_Observer
         // add error message
         $session->addError($params->message);
 
+        // set dispatched
+        $request->setDispatched(true);
+        $controller->setFlag('', Mage_Core_Controller_Varien_Action::FLAG_NO_DISPATCH, true);
+
         // redirect to page
-        if ($params->should_redirect) {
-            header('Location: ' . $params->redirect_to);
-            die();
+        if ($params->shouldRedirect) {
+            $controller->getResponse()->setRedirect($params->redirectTo)->sendResponse();
         }
 
         // proceed
