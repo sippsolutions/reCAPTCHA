@@ -30,8 +30,10 @@ You can use `sippsolutions.reCAPTCHA.reset()` to reset the captcha.
 
 ## Dependencies
 - jQuery must be integrated into Magento (CE 1.9+, EE 1.14+)
+
 Tested with CE 1.9.2.2 and EE 1.14.2.1.
 
 ## Pricing
 The module is free for private and commercial use (see LICENSE.txt).
+
 Donations are greatly appreciated: https://www.paypal.me/sippert
