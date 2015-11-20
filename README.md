@@ -1,8 +1,11 @@
 # sippsolutions reCAPTCHA
-reCAPTCHA Plugin designed for Magento CE 1.9.x and EE 1.14.x
+reCAPTCHA Module designed for Magento CE 1.9.x and EE 1.14.x
 
 ## Usage
-Simply copy the module into your Magento instance. It's done!
+1. Copy the module into your Magento instance.
+2. Retrieve your public and private key at https://www.google.com/recaptcha/admin
+3. Add the keys to your magento configuration (under System > Configuration > sippsolutions > reCAPTCHA)
+4. It's done!
 
 ## Configuration
 There are a few configuration options:
@@ -26,5 +29,5 @@ Currently the captcha gets integrated into:
 You can use `sippsolutions.reCAPTCHA.reset()` to reset the captcha.
 
 ## Limitations
-The module is free for private and commercial use.
+The module is free for private and commercial use (see LICENSE.txt).
 Donations are greatly appreciated: https://www.paypal.me/sippert
