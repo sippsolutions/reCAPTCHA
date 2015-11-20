@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * Copyright (c) 2015 sippsolutions
+ * All rights reserved
+ *
+ * This product includes proprietary software developed at sippsolutions
+ * For more information see http://www.sippsolutions.de/
+ */
+
+/**
+ * Init template for frontend.
+ *
+ * @category   Sippsolutions
+ * @package    Sippsolutions_Recaptcha
+ * @subpackage Layout
+ * @author     Simon Sippert <s.sippert@sippsolutions.de>
+ * @copyright  Copyright (c) 2015 sippsolutions (http://www.sippsolutions.de)
+ * @version    1.0.0
+ * @link       http://www.sippsolutions.de/
+ */
+
+/** @var $_config Sippsolutions_Recaptcha_Helper_Data */
+$_config = Mage::helper('sippsolutions_recaptcha');
+
+// check if module is enabled
+if (!$_config->isEnabled()) return;
+?>
+<script>
+    jQuery(function () {
+        // set options
+        sippsolutions.reCAPTCHA.options.key = <?php echo json_encode($_config->getKeyPublic()); ?>;
+        sippsolutions.reCAPTCHA.options.theme = <?php echo json_encode($_config->getGeneralTheme()); ?>;
+        sippsolutions.reCAPTCHA.options.size = <?php echo json_encode($_config->getGeneralSize()); ?>;
+        sippsolutions.reCAPTCHA.options.locations = <?php echo json_encode($_config->getLocations()); ?>;
+
+        // init
+        sippsolutions.reCAPTCHA.init();
+    });
+</script>

@@ -1,0 +1,25 @@
+# Backend
+"Sippsolutions_Recaptcha::General", "Allgemein"
+"Sippsolutions_Recaptcha::Theme", "Farbschema"
+"Sippsolutions_Recaptcha::Enable", "Aktivieren"
+"Sippsolutions_Recaptcha::Size", "Größe"
+"Show captcha only for guests", "nur für Gäste zeigen"
+"Keys", "Schlüssel"
+"Website key", "Öffentlicher Schlüssel"
+"Private key", "Geheimer Schlüssel"
+"Locations", "Orte"
+"Login", "Login"
+"Product reviews", "Produkt-Bewertungen"
+"Contact form", "Kontaktformular"
+"Account registration", "Registrierung"
+"Custom routes", "Eigene Routen"
+"Routes in format 'module/controller/action'. One per line. Example: 'contacts/index/post'", "Routen im Format 'module/controller/action'. Eine pro Zeile. Beispiel: 'contacts/index/post'"
+
+# Options
+"Normal", "Standard"
+"Compact", "Kompakt"
+"Light", "Hell"
+"Dark", "Dunkel"
+
+# Frontend
+"Please solve the captcha.", "Bitte füllen Sie das Captcha korrekt aus."

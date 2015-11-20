@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright (c) 2015 sippsolutions
+ * All rights reserved
+ *
+ * This product includes proprietary software developed at sippsolutions
+ * For more information see http://www.sippsolutions.de/
+ */
+
+/**
+ * Extension configuration file.
+ *
+ * @category   Sippsolutions
+ * @package    Sippsolutions_Recaptcha
+ * @subpackage Config
+ * @author     Simon Sippert <s.sippert@sippsolutions.de>
+ * @copyright  Copyright (c) 2015 sippsolutions (http://www.sippsolutions.de)
+ * @version    1.0.0
+ * @link       http://www.sippsolutions.de/
+ */
+ -->
+<config>
+	<modules>
+		<Sippsolutions_Recaptcha>
+			<version>1.0.0</version>
+		</Sippsolutions_Recaptcha>
+	</modules>
+	<frontend>
+		<translate>
+			<modules>
+				<sippsolutions_recaptcha>
+					<files>
+						<default>Sippsolutions_Recaptcha.csv</default>
+					</files>
+				</sippsolutions_recaptcha>
+			</modules>
+		</translate>
+		<layout>
+			<updates>
+				<sippsolutions_recaptcha>
+					<file>sippsolutions/recaptcha.xml</file>
+				</sippsolutions_recaptcha>
+			</updates>
+		</layout>
+		<events>
+			<controller_action_predispatch>
+				<observers>
+					<recaptcha_check>
+						<class>sippsolutions_recaptcha/observer</class>
+						<method>checkCaptcha</method>
+					</recaptcha_check>
+				</observers>
+			</controller_action_predispatch>
+		</events>
+	</frontend>
+	<adminhtml>
+		<translate>
+			<modules>
+				<sippsolutions_recaptcha>
+					<files>
+						<default>Sippsolutions_Recaptcha.csv</default>
+					</files>
+				</sippsolutions_recaptcha>
+			</modules>
+		</translate>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<sippsolutions_recaptcha translate="title" module="sippsolutions_recaptcha">
+											<title>sippsolutions_recaptcha</title>
+											<sort_order>50</sort_order>
+										</sippsolutions_recaptcha>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</adminhtml>
+	<global>
+		<models>
+			<sippsolutions_recaptcha>
+				<class>Sippsolutions_Recaptcha_Model</class>
+				<resourceModel>sippsolutions_recaptcha_resource</resourceModel>
+			</sippsolutions_recaptcha>
+		</models>
+		<helpers>
+			<sippsolutions_recaptcha>
+				<class>Sippsolutions_Recaptcha_Helper</class>
+			</sippsolutions_recaptcha>
+		</helpers>
+	</global>
+	<default>
+		<sippsolutions_recaptcha>
+			<general>
+				<enable>1</enable>
+				<only_guests>1</only_guests>
+				<theme>light</theme>
+				<size>normal</size>
+			</general>
+			<location>
+				<login>1</login>
+				<review>1</review>
+				<contact>1</contact>
+				<register>1</register>
+			</location>
+		</sippsolutions_recaptcha>
+	</default>
+</config>

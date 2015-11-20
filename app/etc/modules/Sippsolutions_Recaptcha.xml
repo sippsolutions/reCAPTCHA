@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright (c) 2015 sippsolutions
+ * All rights reserved
+ *
+ * This product includes proprietary software developed at sippsolutions
+ * For more information see http://www.sippsolutions.de/
+ */
+
+/**
+ * Main registration and configuration file.
+ *
+ * @category   Sippsolutions
+ * @package    Sippsolutions_Recaptcha
+ * @subpackage Config
+ * @author     Simon Sippert <s.sippert@sippsolutions.de>
+ * @copyright  Copyright (c) 2015 sippsolutions (http://www.sippsolutions.de)
+ * @version    1.0.0
+ * @link       http://www.sippsolutions.de/
+ */
+ -->
+<config>
+	<modules>
+		<Sippsolutions_Recaptcha>
+			<active>true</active>
+			<codePool>community</codePool>
+			<depends/>
+		</Sippsolutions_Recaptcha>
+	</modules>
+</config>
