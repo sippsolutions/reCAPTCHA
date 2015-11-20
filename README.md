@@ -39,9 +39,9 @@ The module is free for private and commercial use (see LICENSE.txt).
 Donations are greatly appreciated: https://www.paypal.me/sippert
 
 ## Example for ajax actions
-When you use reCAPTCHA for ajax-based actions, you probable want to avoid the redirect.
+When you use reCAPTCHA for ajax-based actions, you probably want to avoid the redirect.
 
-Simple define a new event in your `config.xml`, node config > global > events:
+Simply define a new event in your `config.xml`, node config > global > events:
 
 ```
 <sippsolutions_recaptcha_redirect_before>
